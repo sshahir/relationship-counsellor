@@ -72,6 +72,10 @@
 		width:100%;
 		max-width:100%;
 	}
+	.form_div #query{
+		height:230px;
+		max-height:230px;
+	}
 	.form_div .query_label{
 		color:#FFF;
 		font-size:20px;
@@ -80,12 +84,58 @@
 		width:100%;
 		height:40%;
 	}
-	#about{
+	.posts_container{
+		padding-top:5%;
 		width:100%;
-		height:90%;
+		height:80%;
 	}
-	#about{
-		padding-top:10%;
+	.posts_container .posts_heading{
+		width:100%;
+		height:10%;
+	}
+	.posts_container .posts_heading h3{
+		font-weight:bold;
+		font-family:"Comic Sans MS", cursive, sans-serif;
+		text-align:center;
+		margin-bottom:5%;
+	}
+	.posts_container .user_posts{
+		border:1px solid grey;
+		width:70%;
+		height:50%;
+		border-radius:5px;
+		padding:5px 5px 5px 5px;
+		margin-left:15%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		overflow-x:hidden;
+	}
+	.posts_container .user_posts .post{
+		padding:15px 5px 15px 5px;
+		margin:0;
+		overflow-x:hidden;
+	}
+	.about_container{
+		margin-top:10%;
+		width:100%;
+		height:100%;
+		margin-bottom:40%;
+	}
+	.about_container .about_heading{
+		width:100%;
+		height:10%;
+	}
+	.about_container .about_heading h3{
+		font-weight:bold;
+		font-family:"Comic Sans MS", cursive, sans-serif;
+		text-align:center;
+	}
+	.about_container .about_content{
+		padding:10% 0% 0% 0%;
+		word-wrap: break-word;
+		width:70%;
+		margin-left:15%;
+		font-family:Tahoma;
+		font-weight:3px;
 	}
 	@media screen and (max-width: 750px) {
 		.main_title_outer{
@@ -123,9 +173,13 @@
 		$(".navbar-brand").on('click',function(){
 			$('html, body').animate({ scrollTop: 0 }, 1000);
 		});
-		$(".navbar-nav li a").on('click',function(){
+		$(".navbar-nav li .qr").on('click',function(){
 			$(".navbar-collapse").collapse('hide');
-			$('html, body').animate({ scrollTop: $('#about').position().top }, 1000);
+			$('html, body').animate({ scrollTop: $('.posts_container').position().top-50 }, 1000);
+		});
+		$(".navbar-nav li .ab").on('click',function(){
+			$(".navbar-collapse").collapse('hide');
+			$('html, body').animate({ scrollTop: $('.about_container').position().top }, 1000);
 		});
 	});	
 	</script>
@@ -144,7 +198,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About</a></li>
+		<li><a href="#" class="qr">Queries</a></li>
+        <li><a href="#" class="ab">About</a></li>
       </ul>
     </div>
   </div>
@@ -160,7 +215,7 @@
 	</div>
 	<div class="form-group">
 		<label for="query" class="query_label">Write your Query</label>
-		<textarea class="form-control" rows="9" id="query" name="query"></textarea>
+		<textarea class="form-control" id="query" name="query"></textarea>
 	</div>
 	<div class="form-group text-center">
 		<input type="submit" class="btn btn-info" value="Submit Query">
@@ -170,9 +225,30 @@
 </div>
 <div class="lower_container">
 </div>
-<div id="about">
-<div class="panel panel-default">
-  <div class="panel-body">This website is for relationship counselling. Just give us ur query and we will mail you the solution.</div>
+<div class="posts_container">
+	<div class="posts_heading"><h3>Some Queries</h3><div>
+	<div class="user_posts">
+		<div class="post bg-success">
+		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
+		</div>
+		<div class="post bg-warning">
+		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
+		</div>
+		<div class="post bg-danger">
+		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
+		</div>
+		<div class="post bg-success">
+		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
+		</div>
+		<div class="post bg-warning">
+		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
+		</div>
+	</div>
+</div>
+<div class="about_container">
+<div class="about_heading"><h3>About<h3></div>
+<div class="about_content">
+This website is for relationship counselling. Just give us your query and we will mail you the solution.
 </div>
 </div>
 </div>
