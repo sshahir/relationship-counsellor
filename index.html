@@ -30,6 +30,7 @@
 		background-image:none;
 		border-color:transparent;
 		box-shadow:none;
+		transition: .4s ease;
 	}
 	.navbar-nav{
 		float:right;
@@ -107,18 +108,19 @@
 		padding:5px 5px 5px 5px;
 		margin-left:15%;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		overflow-y:scroll;
 		overflow-x:hidden;
 	}
 	.posts_container .user_posts .post{
 		padding:15px 5px 15px 5px;
 		margin:0;
 		overflow-x:hidden;
+		overflow-y:hidden;
 	}
 	.about_container{
 		margin-top:10%;
 		width:100%;
 		height:100%;
-		margin-bottom:40%;
 	}
 	.about_container .about_heading{
 		width:100%;
@@ -130,12 +132,13 @@
 		text-align:center;
 	}
 	.about_container .about_content{
-		padding:10% 0% 0% 0%;
+		padding:5% 0% 0% 0%;
 		word-wrap: break-word;
 		width:70%;
 		margin-left:15%;
 		font-family:Tahoma;
 		font-weight:3px;
+		text-align:center;
 	}
 	@media screen and (max-width: 750px) {
 		.main_title_outer{
@@ -153,6 +156,7 @@
 			font-size:15px;
 		}
 	}
+	
 	</style>
 	<script>
 	$(document).ready(function(){       
@@ -179,7 +183,7 @@
 		});
 		$(".navbar-nav li .ab").on('click',function(){
 			$(".navbar-collapse").collapse('hide');
-			$('html, body').animate({ scrollTop: $('.about_container').position().top }, 1000);
+			$('html, body').animate({ scrollTop: $('.about_container').position().top-50 }, 1000);
 		});
 	});	
 	</script>
@@ -226,7 +230,7 @@
 <div class="lower_container">
 </div>
 <div class="posts_container">
-	<div class="posts_heading"><h3>Some Queries</h3><div>
+	<div class="posts_heading"><h3>Some Queries</h3></div>
 	<div class="user_posts">
 		<div class="post bg-success">
 		This is a serious issue. I need to express it. So the story begins with a girl sitting on a rock beside a sea beach. I saw her and went to talk to her.
